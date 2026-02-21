@@ -3,99 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Étudiant Plus | Casablanca-Settat</title>
+    <title>Job Étudiant Plus | Services & Offres</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         html { scroll-behavior: smooth; }
-        .jep-blue { background-color: #003366; }
-        .text-jep { color: #003366; }
-        .hero-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .jep-blue { color: #003366; }
+        .bg-jep { background-color: #003366; }
+        .card:hover { transform: translateY(-5px); transition: all 0.3s; }
     </style>
 </head>
-<body class="bg-gray-50 text-slate-900">
+<body class="bg-gray-50 text-gray-900">
 
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur shadow-md px-6 py-3 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-            <img src="logo.jpg" alt="Logo JEP" class="h-10 w-10 rounded-full">
-            <span class="font-bold text-lg text-jep uppercase tracking-tighter">Job Étudiant Plus</span>
+    <nav class="fixed w-full z-50 bg-white/95 shadow-sm px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <img src="logo.jpg" alt="Logo" class="h-12 w-12 rounded-full border">
+            <span class="font-black text-xl jep-blue tracking-tighter uppercase">Job Étudiant Plus</span>
         </div>
-        <div class="hidden md:flex space-x-6 font-bold text-jep">
+        <div class="hidden md:flex space-x-8 font-bold jep-blue uppercase text-sm">
             <a href="#accueil" class="hover:text-blue-500">Accueil</a>
-            <a href="#apropos" class="hover:text-blue-500">À Propos</a>
+            <a href="#services" class="hover:text-blue-500">Services</a>
             <a href="#offres" class="hover:text-blue-500">Offres</a>
             <a href="#contact" class="hover:text-blue-500">Contact</a>
         </div>
     </nav>
 
-    <section id="accueil" class="relative h-screen flex items-center justify-center overflow-hidden">
-        <img src="hero.jpg" class="absolute w-full h-full object-cover brightness-50" alt="Bienvenue">
-        <div class="relative z-10 text-center text-white px-4">
-            <h1 class="text-5xl md:text-7xl font-black mb-4 hero-shadow uppercase">Trouvez le Job de vos Rêves !</h1>
-            <p class="text-xl md:text-2xl font-semibold mb-8 italic">"Ton temps libre devient une opportunité"</p>
-            <a href="#offres" class="bg-blue-600 hover:bg-orange-500 text-white px-10 py-4 rounded-full font-black transition-all shadow-2xl">VOIR LES OFFRES</a>
+    <section id="accueil" class="relative h-[70vh] flex items-center justify-center text-center">
+        <img src="hero.jpg" class="absolute inset-0 w-full h-full object-cover brightness-50" alt="Hero">
+        <div class="relative z-10 text-white px-4">
+            <h1 class="text-5xl md:text-7xl font-black uppercase mb-4">Boostez Votre Avenir</h1>
+            <p class="text-xl md:text-2xl font-bold italic mb-8">"Ton temps libre devient une opportunité"</p>
+            <a href="#offres" class="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full font-black shadow-xl inline-block">DÉCOUVRIR LES OFFRES</a>
         </div>
     </section>
 
-    <section id="apropos" class="py-20 px-6 bg-white">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-4xl font-black text-jep mb-6 uppercase">À Propos de Nous</h2>
-                <p class="text-lg leading-relaxed mb-6">
-                    Le tremplin idéal pour booster votre carrière tout en étudiant. <strong>Job Étudiant Plus</strong> connecte les talents académiques du Maroc avec des opportunités concrètes. Flexibilité, expérience et réseau : construisons votre avenir dès aujourd'hui.
-                </p>
-                <p class="font-bold text-blue-700 italic">📍 Région : Casablanca-Settat, Maroc</p>
-            </div>
-            <img src="offres-image.jpg" class="rounded-3xl shadow-xl border-4 border-gray-100" alt="Services">
+    <section id="services" class="py-20 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black jep-blue uppercase">Nos Services Professionnels</h2>
+            <div class="h-1 w-20 bg-orange-500 mx-auto mt-4"></div>
         </div>
-    </section>
-
-    <section id="offres" class="py-20 px-6 bg-slate-100">
-        <div class="max-w-6xl mx-auto text-center mb-12">
-            <h2 class="text-4xl font-black text-jep uppercase">Nos Offres du Moment</h2>
-            <p class="text-gray-500 mt-2 font-bold italic">#StudentPower</p>
-        </div>
-        <div class="max-w-5xl mx-auto">
-            <img src="infographie.jpg" class="w-full rounded-3xl shadow-2xl mb-12" alt="Infographie">
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition border-t-4 border-blue-600">
-                    <h3 class="font-bold text-xl mb-2 text-jep">Jobs Étudiants</h3>
-                    <p class="text-sm text-gray-600 italic mb-4">Temps partiel, soirées et week-ends.</p>
-                    <button class="w-full py-2 bg-jep text-white rounded-lg font-bold">Postuler</button>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <img src="offres-image.jpg" class="rounded-3xl shadow-2xl border" alt="Services JEP">
+            <div class="grid grid-cols-1 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-blue-900 card">
+                    <h3 class="font-bold text-xl jep-blue mb-2 italic">Études + Revenu + Expérience</h3>
+                    <p class="text-gray-600">Nous aidons les étudiants à financer leurs études tout en construisant un CV solide dès la première année.</p>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition border-t-4 border-orange-500">
-                    <h3 class="font-bold text-xl mb-2 text-jep">Stages & Été</h3>
-                    <p class="text-sm text-gray-600 italic mb-4">Gagnez en expérience professionnelle.</p>
-                    <button class="w-full py-2 bg-jep text-white rounded-lg font-bold">Postuler</button>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-orange-500 card">
+                    <h3 class="font-bold text-xl text-orange-600 mb-2 italic">Conseils Carrière</h3>
+                    <p class="text-gray-600">Accompagnement personnalisé pour rédiger votre CV et réussir vos entretiens d'embauche.</p>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition border-t-4 border-green-500">
-                    <h3 class="font-bold text-xl mb-2 text-jep">Freelance</h3>
-                    <p class="text-sm text-gray-600 italic mb-4">Missions courtes selon vos talents.</p>
-                    <button class="w-full py-2 bg-jep text-white rounded-lg font-bold">Postuler</button>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-blue-600 card">
+                    <h3 class="font-bold text-xl text-blue-600 mb-2 italic">Missions Freelance</h3>
+                    <p class="text-gray-600">Utilisez vos talents en design, marketing ou traduction pour des missions courtes et bien payées.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="jep-blue text-white py-16 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-8 uppercase">Rejoignez-Nous sur les Réseaux</h2>
-            
-            <div class="flex justify-center flex-wrap gap-8 mb-12">
-                <a href="https://www.instagram.com/jobetudiantplus_maroc" class="text-4xl hover:text-pink-400 transition transform hover:scale-110"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@jobetudiantplus" class="text-4xl hover:text-gray-400 transition transform hover:scale-110"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61585559188360" class="text-4xl hover:text-blue-400 transition transform hover:scale-110"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.linkedin.com/in/job-etudiant-plus-b554b23b2/" class="text-4xl hover:text-blue-300 transition transform hover:scale-110"><i class="fab fa-linkedin"></i></a>
+    <section id="offres" class="py-20 bg-blue-50 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black jep-blue uppercase">Offres Disponibles (Casablanca-Settat)</h2>
+                <p class="text-gray-500 font-bold mt-2 italic">Postulez dès maintenant !</p>
             </div>
 
-            <div class="bg-white/10 p-6 rounded-3xl inline-block">
-                <p class="font-bold text-xl mb-2">📍 Casablanca-Settat, Maroc</p>
-                <p class="opacity-80">Email : contact@jobetudiantplus.com</p>
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white rounded-3xl p-8 shadow-lg border-b-8 border-blue-600">
+                    <span class="text-blue-600 font-bold uppercase text-xs">Stage Rémunéré</span>
+                    <h3 class="text-2xl font-black mt-2 mb-4">Assistant Marketing</h3>
+                    <p class="text-gray-600 mb-6 font-medium italic">📍 Casablanca Nearshore</p>
+                    <div class="flex justify-between items-center bg-gray-50 p-4 rounded-xl">
+                        <span class="text-gray-500 font-bold">Indemnité :</span>
+                        <span class="text-2xl font-black text-blue-900">2500 DH</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-lg border-b-8 border-orange-500">
+                    <span class="text-orange-500 font-bold uppercase text-xs">Temps Partiel</span>
+                    <h3 class="text-2xl font-black mt-2 mb-4">Vendeur Boutique</h3>
+                    <p class="text-gray-600 mb-6 font-medium italic">📍 Casablanca - Maârif</p>
+                    <div class="flex justify-between items-center bg-gray-50 p-4 rounded-xl">
+                        <span class="text-gray-500 font-bold">Salaire :</span>
+                        <span class="text-2xl font-black text-blue-900">3200 DH</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-lg border-b-8 border-green-600">
+                    <span class="text-green-600 font-bold uppercase text-xs">Freelance</span>
+                    <h3 class="text-2xl font-black mt-2 mb-4">Soutien Scolaire</h3>
+                    <p class="text-gray-600 mb-6 font-medium italic">📍 À Domicile / En ligne</p>
+                    <div class="flex justify-between items-center bg-gray-50 p-4 rounded-xl">
+                        <span class="text-gray-500 font-bold">Tarif :</span>
+                        <span class="text-2xl font-black text-blue-900">120 DH/H</span>
+                    </div>
+                </div>
             </div>
-            
-            <p class="mt-12 text-sm opacity-50">&copy; 2026 Job Étudiant Plus Maroc.</p>
+
+            <img src="infographie.jpg" class="w-full rounded-[2rem] shadow-2xl" alt="Process">
         </div>
+    </section>
+
+    <footer id="contact" class="bg-slate-900 text-white py-16 px-6 text-center">
+        <h2 class="text-3xl font-black mb-8 uppercase tracking-widest">Rejoignez Job Étudiant Plus</h2>
+        <div class="flex justify-center gap-8 mb-10 text-4xl">
+            <a href="https://www.instagram.com/jobetudiantplus_maroc" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@jobetudiantplus" class="hover:text-gray-400 transition"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61585559188360" class="hover:text-blue-500 transition"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/job-etudiant-plus-b554b23b2/" class="hover:text-blue-300 transition"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p class="font-bold text-orange-500 text-lg">📍 Région : Casablanca-Settat, Maroc</p>
+        <p class="text-sm opacity-50 mt-4">&copy; 2026 Job Étudiant Plus. Tous droits réservés. #StudentPower</p>
     </footer>
 
 </body>
