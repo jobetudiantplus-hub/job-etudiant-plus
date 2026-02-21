@@ -10,6 +10,8 @@
         html { scroll-behavior: smooth; }
         .jep-blue { color: #003366; }
         .bg-jep { background-color: #003366; }
+        .hover-scale { transition: transform 0.3s ease; }
+        .hover-scale:hover { transform: scale(1.05); }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-900">
@@ -27,14 +29,12 @@
         </div>
     </nav>
 
-    <section id="accueil" class="pt-28 px-6 max-w-5xl mx-auto flex flex-col items-center">
+    <section id="accueil" class="pt-28 px-6 max-w-5xl mx-auto flex flex-col items-center text-center">
         <div class="w-full mb-10 overflow-hidden rounded-3xl shadow-2xl">
             <img src="hero.jpg" alt="Trouvez le job de vos rêves" class="w-full h-auto">
         </div>
-        <div class="text-center">
-            <h1 class="text-3xl md:text-5xl font-black jep-blue uppercase mb-4 tracking-tighter">Connecte tes études et ton avenir</h1>
-            <p class="text-lg text-gray-600 italic font-medium">Stages • Temps Partiel • Jobs d'Été • Projets Freelance</p>
-        </div>
+        <h1 class="text-3xl md:text-5xl font-black jep-blue uppercase mb-4 tracking-tighter text-center">Connecte tes études et ton avenir</h1>
+        <p class="text-lg text-gray-600 italic font-medium">Stages • Temps Partiel • Jobs d'Été • Projets Freelance</p>
     </section>
 
     <section id="propos" class="py-16 px-6 max-w-4xl mx-auto">
@@ -46,33 +46,52 @@
         </div>
     </section>
 
+    <section class="py-10 px-6 max-w-6xl mx-auto">
+        <h2 class="text-center font-bold jep-blue mb-10 uppercase tracking-widest">Exemples de postes au Maroc</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <img src="marketing.jpg" alt="Marketing" class="rounded-2xl shadow-md mb-3 h-64 w-full object-cover border-2 border-orange-500 hover-scale">
+                <p class="font-bold jep-blue italic">Assistant Marketing</p>
+            </div>
+            <div class="text-center">
+                <img src="vendeur.jpg" alt="Vendeur" class="rounded-2xl shadow-md mb-3 h-64 w-full object-cover border-2 border-orange-500 hover-scale">
+                <p class="font-bold jep-blue italic">Vendeur Boutique</p>
+            </div>
+            <div class="text-center">
+                <img src="professeur.jpg" alt="Professeur" class="rounded-2xl shadow-md mb-3 h-64 w-full object-cover border-2 border-orange-500 hover-scale">
+                <p class="font-bold jep-blue italic">Professeur de Mathématiques</p>
+            </div>
+        </div>
+    </section>
+
     <section id="offres" class="py-20 bg-slate-100 px-6">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold jep-blue mb-2 uppercase tracking-tight">Nos Offres Actuelles</h2>
-            <p class="text-orange-500 font-bold mb-8 uppercase text-sm tracking-widest italic">Annonces vérifiées</p>
-            
+            <h2 class="text-3xl font-bold jep-blue mb-8 uppercase">Nos Offres Actuelles</h2>
             <div class="bg-white p-2 rounded-2xl shadow-xl border">
-                <img src="offres.png" alt="Liste des offres d'emploi" class="w-full rounded-xl">
+                <img src="offres.png" alt="Liste des offres" class="w-full rounded-xl">
             </div>
-
             <div class="mt-12 bg-jep p-8 rounded-2xl text-white shadow-lg">
-                <p class="mb-6 text-xl font-medium italic">Une offre vous intéresse ? Envoyez votre CV ici :</p>
+                <p class="mb-6 text-xl font-medium italic italic">Une offre vous intéresse ? Postulez ici :</p>
                 <a href="mailto:Job.Etudiant.plus@gmail.com" class="bg-orange-500 text-white px-10 py-4 rounded-full font-black text-lg shadow-lg hover:bg-white hover:text-[#003366] transition transform hover:-translate-y-1 inline-block">
-                    <i class="fas fa-paper-plane mr-2"></i> Job.Etudiant.plus@gmail.com
+                    <i class="fas fa-envelope mr-2"></i> Job.Etudiant.plus@gmail.com
                 </a>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-gray-900 text-white py-12 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="flex justify-center gap-8 mb-8 text-3xl">
-                <a href="#" class="hover:text-orange-500 transition"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-orange-500 transition"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="hover:text-orange-500 transition"><i class="fab fa-tiktok"></i></a>
+    <footer id="contact" class="bg-gray-900 text-white py-16 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-orange-500 font-bold uppercase mb-6 tracking-widest text-sm">Suivez-nous sur les réseaux</h3>
+            <div class="flex justify-center gap-10 mb-10 text-4xl">
+                <a href="https://www.instagram.com/votre_compte" target="_blank" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/votre_page" target="_blank" class="hover:text-blue-400 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.tiktok.com/@votre_compte" target="_blank" class="hover:text-gray-400 transition"><i class="fab fa-tiktok"></i></a>
             </div>
-            <p class="text-gray-400 mb-2 font-bold tracking-widest uppercase text-sm italic">📍 Casablanca-Settat, Maroc</p>
-            <p class="text-xs opacity-40 uppercase tracking-widest">© 2026 Job Étudiant Plus - #StudentPower</p>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-gray-400 font-bold uppercase text-sm mb-2 italic">📍 Casablanca-Settat, Maroc</p>
+                <p class="text-xs opacity-40 uppercase tracking-widest">© 2026 Job Étudiant Plus - #StudentPower</p>
+            </div>
         </div>
     </footer>
 
