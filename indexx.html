@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Étudiant Plus | Recrutement au Maroc</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #3b82f6;
+            --accent: #f59e0b;
+            --glass: rgba(255, 255, 255, 0.1);
+            --dark: #1e293b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #f8fafc; color: var(--dark); overflow-x: hidden; }
+
+        /* Effet Background 3D animé */
+        .bg-animate {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, #e0e7ff 0%, #f8fafc 100%);
+            z-index: -1;
+        }
+
+        /* Header & Nav */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 10%; background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+        }
+
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 0 10%;
+            background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1350&q=80') center/cover;
+            color: white; position: relative;
+        }
+        .hero::before { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); }
+        .hero-content { position: relative; z-index: 1; transform: translateZ(50px); }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
+
+        /* Sections Générales */
+        section { padding: 80px 10%; }
+        h2 { text-align: center; margin-bottom: 50px; font-size: 2.5rem; position: relative; }
+        h2::after { content: ''; width: 80px; height: 4px; background: var(--primary); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+        /* Cards Design 3D */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .card {
+            background: white; padding: 30px; border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255,255,255,0.3);
+            cursor: pointer; position: relative; overflow: hidden;
+        }
+        .card:hover { transform: translateY(-10px) rotateX(5deg); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; margin-bottom: 15px; }
+        .price { font-size: 1.2rem; color: var(--accent); font-weight: bold; margin: 10px 0; }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: var(--glass); backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2); padding: 20px; border-radius: 15px; text-align: center;
+        }
+        .testimonial-card img { width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--primary); margin-bottom: 10px; }
+
+        /* Modal / Formulaire */
+        .modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8); display: none; justify-content: center;
+            align-items: center; z-index: 2000;
+        }
+        .modal-content {
+            background: white; padding: 40px; border-radius: 20px; width: 90%; max-width: 500px;
+            position: relative; animation: slideUp 0.4s ease;
+        }
+        @keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
+        .btn {
+            background: var(--primary); color: white; padding: 12px 25px; border: none;
+            border-radius: 8px; cursor: pointer; transition: 0.3s; width: 100%; font-weight: 600;
+        }
+        .btn:hover { background: #1d4ed8; transform: scale(1.02); }
+
+        /* Social Media */
+        .social-icons { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
+        .social-icons a { 
+            font-size: 2rem; color: var(--dark); transition: 0.3s; 
+        }
+        .social-icons a:hover { transform: translateY(-5px); }
+        .fa-facebook { color: #1877F2; } .fa-instagram { color: #E4405F; }
+        .fa-linkedin { color: #0A66C2; } .fa-tiktok { color: #000000; }
+
+        /* Footer */
+        footer { background: var(--dark); color: white; padding: 50px 10%; text-align: center; }
+
+        .confirmation { display: none; text-align: center; }
+        .confirmation i { font-size: 4rem; color: #22c55e; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-animate"></div>
+
+    <nav>
+        <div class="logo">JOB ÉTUDIANT PLUS</div>
+        <div class="menu">
+            <a href="#propos" style="margin-left:20px; text-decoration:none; color:inherit;">À propos</a>
+            <a href="#offres" style="margin-left:20px; text-decoration:none; color:inherit;">Offres</a>
+            <a href="#contact" style="margin-left:20px; text-decoration:none; color:inherit;">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Trouvez le Job de vos Rêves</h1>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+                Job Étudiant Plus est une agence de recrutement étudiant au Maroc spécialisée dans les emplois à temps partiel, 
+                jobs weekend et travail saisonnier. Nous facilitons la mise en relation entre étudiants et entreprises.
+            </p>
+        </div>
+    </header>
+
+    <section id="propos">
+        <h2>À Propos de Nous</h2>
+        <div style="text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+            <p>Notre mission est d'accompagner la jeunesse marocaine dans leur insertion professionnelle précoce. Que vous soyez à Casablanca, Rabat ou Marrakech, nous dénichons des opportunités flexibles adaptées à vos horaires universitaires.</p>
+        </div>
+    </section>
+
+    <section id="offres">
+        <h2>Nos Offres Actuelles</h2>
+        <div class="grid">
+            <div class="card" onclick="openModal('Agent de Saisie')">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=400&q=80" alt="Job">
+                <h3>Agent de Saisie</h3>
+                <p>Mission flexible en soirée.</p>
+                <p class="price">2,500 DH / mois</p>
+                <button class="btn">Postuler maintenant</button>
+            </div>
+            <div class="card" onclick="openModal('Animateur de Vente')">
+                <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=400&q=80" alt="Job">
+                <h3>Animateur de Vente</h3>
+                <p>Travail les weekends en centre commercial.</p>
+                <p class="price">200 DH / jour</p>
+                <button class="btn">Postuler maintenant</button>
+            </div>
+            <div class="card" onclick="openModal('Conseiller Client')">
+                <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?auto=format&fit=crop&w=400&q=80" alt="Job">
+                <h3>Conseiller Client</h3>
+                <p>Temps partiel en centre d'appel.</p>
+                <p class="price">3,500 DH / mois</p>
+                <button class="btn">Postuler maintenant</button>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #edf2f7;">
+        <h2>Avis de nos Étudiants</h2>
+        <div class="grid">
+            <div class="testimonial-card">
+                <img src="https://i.postimg.cc/ydLZ86BB/792ae17d583b8db911e6f3653155e726.jpg" alt="User">
+                <p>"Grâce à Job Étudiant Plus, j'ai trouvé un job de week-end qui paie mon loyer !"</p>
+                <strong>- Sofia, Casa</strong>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://i.postimg.cc/8CKv1PTG/5f0286cc4feb12e72cbf98358103ec71.jpg" alt="User">
+                <p>"Super agence, très professionnels et à l'écoute des étudiants."</p>
+                <strong>- Yassine, Rabat</strong>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://i.postimg.cc/hvJf49pZ/332e90898760e365b2efd5cf32595c32.jpg" alt="User">
+                <p>"Les horaires sont vraiment respectés. Idéal pour mes études."</p>
+                <strong>- Hasna, Tanger</strong>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://i.pravatar.cc/150?u=4" alt="User">
+                <p>"L'inscription est rapide et les offres sont sérieuses."</p>
+                <strong>- Layla, Agadir</strong>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://i.postimg.cc/Bn3HpVh6/701411889b2e9a9cb2822f0395f02b19.jpg" alt="User">
+                <p>"Je recommande à tous mes amis étudiants au Maroc."</p>
+                <strong>- Omar, Fès</strong>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <div style="text-align: center;">
+            <p><i class="fas fa-map-marker-alt"></i> Angle Rue Al Ikshane et Boulevard Zerktouni, Casablanca, Maroc</p>
+            <p><i class="fas fa-phone"></i> +212 713688961</p>
+            <div class="social-icons">
+                <a href="https://urls.fr/8IJmd_" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/jobetudiantplus_maroc?igsh=aWoyNHN0dnd4ZDMw&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/job-etudiant-plus-b554b23b2/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.tiktok.cdin.com/@jobetudiantplus?_r=1&_t=ZS-944rFjlWfSP" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Job Étudiant Plus - Tous droits réservés.</p>
+    </footer>
+
+    <div class="modal" id="jobModal">
+        <div class="modal-content">
+            <span onclick="closeModal()" style="float:right; cursor:pointer; font-size:1.5rem;">&times;</span>
+            <div id="formContainer">
+                <h3 id="modalTitle">Postuler pour l'offre</h3>
+                <form id="applyForm">
+                    <input type="text" placeholder="Nom complet" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="tel" placeholder="Téléphone (ex: 06...)" required>
+                    <textarea placeholder="Pourquoi vous ?" rows="4"></textarea>
+                    <button type="submit" class="btn">Envoyer ma candidature</button>
+                </form>
+            </div>
+            <div id="confirmationMessage" class="confirmation">
+                <i class="fas fa-check-circle"></i>
+                <h3>Candidature Envoyée !</h3>
+                <p>Merci de votre confiance. Nos assistants vont réviser votre demande et vous contacteront sous 48h.</p>
+                <button class="btn" onclick="closeModal()" style="margin-top:20px;">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('jobModal');
+        const formContainer = document.getElementById('formContainer');
+        const confirmationMessage = document.getElementById('confirmationMessage');
+
+        function openModal(jobTitle) {
+            document.getElementById('modalTitle').innerText = "Postuler : " + jobTitle;
+            modal.style.display = 'flex';
+            formContainer.style.display = 'block';
+            confirmationMessage.style.display = 'none';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        document.getElementById('applyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            formContainer.style.display = 'none';
+            confirmationMessage.style.display = 'block';
+        });
+
+        // Fermer si clic en dehors
+        window.onclick = function(event) {
+            if (event.target == modal) closeModal();
+        }
+    </script>
+</body>
+</html>
